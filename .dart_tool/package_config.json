@@ -164,10 +164,10 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-05-20T03:08:46.215685Z",
+  "generated": "2024-06-06T05:40:54.861137Z",
   "generator": "pub",
-  "generatorVersion": "3.4.0",
+  "generatorVersion": "3.4.1",
   "flutterRoot": "file:///C:/flutter",
-  "flutterVersion": "3.22.0",
+  "flutterVersion": "3.22.1",
   "pubCache": "file:///C:/Users/Askhat/AppData/Local/Pub/Cache"
 }
