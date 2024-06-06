@@ -39,3 +39,9 @@ Z
 *example/lib/modal_bottom_sheet_screen.dart,5\0\501e7f709e5e0ca0057d0b8b4712e4c3b9299bc1
 O
 example/lib/example_screen.dart,0\8\0838ee361be757e02b8555b3952bb1d87252965c
+7
+LICENSE,0\3\0398ccd0f49298b10a3d76a47800d2ebecd49859
+<
+pubspec.yaml,e\8\e8e045469170189f1d6ef12576bd01af132b1018
+<
+CHANGELOG.md,a\b\ab09011fa121d0a2bb9fa4ca76094f2482b902b7

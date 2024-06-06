@@ -21,15 +21,6 @@ class ExampleScreen extends StatelessWidget {
       selectValueController: selectValueController,
       values: examples,
       label: 'Example',
-      builder: (
-        context,
-        value,
-        selectedValue,
-        onChange,
-      ) =>
-          Text(
-            value,
-          ),
     );
 
     return Scaffold(
