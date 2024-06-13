@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SelectedValueModalBottomSheetOptions<T> {
+class SelectedValueModalBottomSheetOptions {
+
   final Widget? bottomWidget;
 
-  SelectedValueModalBottomSheetOptions({this.bottomWidget});
+  const SelectedValueModalBottomSheetOptions({this.bottomWidget});
+
 }

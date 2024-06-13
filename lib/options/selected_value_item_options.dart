@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SelectedValueItemOptions<T> {
+class SelectedValueItemOptions {
+
   final EdgeInsets? padding;
   final Color? backgroundColor;
   final double? borderRadius;
@@ -10,14 +11,15 @@ class SelectedValueItemOptions<T> {
   final Color? borderColor;
   final Widget? icon;
 
-  SelectedValueItemOptions({
+  const SelectedValueItemOptions({
+    required this.label,
     this.backgroundColor,
     this.borderRadius,
-    required this.label,
     this.labelStyle,
     this.showBorder = true,
     this.borderColor,
     this.padding,
     this.icon,
   });
+
 }

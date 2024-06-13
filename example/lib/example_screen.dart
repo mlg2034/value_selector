@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:value_selector/conponents/components.dart';
+import 'package:value_selector/components/components.dart';
 import 'package:value_selector/controllers/select_value_controller.dart';
 import 'package:value_selector/options/options.dart';
 
@@ -8,16 +8,17 @@ class ExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> examples = [
+
+    final examples = <String>[
       'example 1',
       'example 2',
       'example 3',
       'example 4'
     ];
-    final SelectValueController<String> selectValueController =
-        SelectValueController<String>();
 
-    final SelectValueOption selectValueOption = SelectValueOption(
+    final selectValueController = SelectValueController<String>();
+
+    final selectValueOption = SelectValueOption(
       selectValueController: selectValueController,
       values: examples,
       label: 'Example',

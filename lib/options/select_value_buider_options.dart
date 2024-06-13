@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:value_selector/controllers/select_value_controller.dart';
 
+
+typedef SelectValueBuilder<T> = Widget Function(
+  BuildContext context,
+  T value,
+  T? selectedValue,
+  void Function(T?)? onChanged,
+);
+
+
 class SelectValueOption<T> {
+
   final SelectValueController<T> selectValueController;
-  late Widget Function(BuildContext context, T value, T? selectedValue,
-      void Function(T?)? onChange)? builder;
+  late final SelectValueBuilder<T>? builder;
   final List<T> values;
   final EdgeInsets? padding;
   final Color? backgroundColor;
   final double? borderRadius;
-  late String label;
+  final String label;
   final TextStyle? labelStyle;
   final bool? showBorder;
   final Color? borderColor;
@@ -17,7 +26,6 @@ class SelectValueOption<T> {
 
   SelectValueOption({
     required this.selectValueController,
-    this.builder,
     required this.values,
     this.backgroundColor,
     this.borderRadius,
@@ -26,15 +34,16 @@ class SelectValueOption<T> {
     this.showBorder = true,
     this.borderColor,
     this.padding,
+    this.builder,
     this.icon,
   }) {
-    builder = builder ??
-        (
-          BuildContext context,
-          T value,
-          T? selectedValue,
-          void Function(T?)? onChanged,
-        ) =>
+    this.builder = builder ??
+            (
+              BuildContext context,
+              T value,
+              T? selectedValue,
+              void Function(T?)? onChanged,
+            ) =>
             RadioListTile<T>(
               visualDensity: const VisualDensity(horizontal: -4.0),
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -46,4 +55,6 @@ class SelectValueOption<T> {
               ),
             );
   }
+
+
 }
