@@ -18,7 +18,7 @@ These features make the Value Selector package a powerful tool for developers lo
 ### Example: Selectable List in a Modal Bottom Sheet3
 
 
-You can configure your custom builder for selections using the `SelectValueOption` class. This allows you to specify how each option should be displayed and interacted with within your app. Below is an example of how to set up `SelectValueOption` with a list of examples.
+You can configure your custom builder for selections using the `options` class. This allows you to specify how each option should be displayed and interacted with within your app. Below is an example of how to set up `options` with a list of examples.
 ```dart
 
 final examples = <String>[
@@ -30,7 +30,7 @@ final examples = <String>[
 
 final selectValueController = SelectValueController<String>();
 
-final selectValueOption = SelectValueOption(
+final options = options(
   selectValueController: selectValueController,
   values: examples,
   label: 'Example',
@@ -54,12 +54,12 @@ How to use options
 
 ```dart
 SelectedValueItemWidget(
-    selectValueOption: selectValueOption,
+    options: options,
     onPressed: () {
       showModalBottomSheet(
         context: context,
         builder: (_) => SelectValueBuilder(
-          options: selectValueOption,
+          options: options,
         ),
       );
     },
@@ -68,18 +68,18 @@ SelectedValueItemWidget(
 
 ## Usage Without Custom `builder`
 
-If a custom `builder` function is not provided, `SelectValueOption` utilizes a default builder. This default is designed to be both practical and versatile, suitable for common use cases involving selection inputs.
+If a custom `builder` function is not provided, `options` utilizes a default builder. This default is designed to be both practical and versatile, suitable for common use cases involving selection inputs.
 
-Here's how to initialize `SelectValueOption` without specifying a custom `builder`:
+Here's how to initialize `options` without specifying a custom `builder`:
 
 ```dart
-final selectValueOption = SelectValueOption(
+final options = options(
   selectValueController: selectValueController,
   values: examples,
   label: 'Example',
 );
 ```
-In `SelectValueOption` 
+In `options` 
 ```dart
  builder = builder ??
         (
