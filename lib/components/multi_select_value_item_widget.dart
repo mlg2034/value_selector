@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:value_selector/options/options.dart';
 
-class SelectedValueItemWidget<T> extends StatefulWidget {
+import '../options/options.dart';
+import 'components.dart';
+
+class MultiSelectValueItemWidget<T> extends StatefulWidget {
   final VoidCallback onPressed;
-  final SelectedValueOption<T> options;
+  final MultiSelectValueOptions options;
 
-  const SelectedValueItemWidget({
+  const MultiSelectValueItemWidget({
     super.key,
     required this.options,
     required this.onPressed,
   });
 
   @override
-  State<SelectedValueItemWidget<T>> createState() =>
-      _SelectedValueItemWidgetState<T>();
+  State<MultiSelectValueItemWidget> createState() =>
+      _MultiSelectValueItemWidgetState();
 }
 
-class _SelectedValueItemWidgetState<T>
-    extends State<SelectedValueItemWidget<T>> {
+class _MultiSelectValueItemWidgetState<T>
+    extends State<MultiSelectValueItemWidget<T>> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -40,20 +42,19 @@ class _SelectedValueItemWidgetState<T>
             borderRadius: BorderRadius.circular(
                 widget.options.widgetOptions.borderRadius ?? 8),
           ),
-          child: ValueListenableBuilder<T?>(
-            valueListenable: widget.options.selectValueController,
+          child: ValueListenableBuilder(
+            valueListenable: widget.options.controller,
             builder: (context, value, child) {
-              String label =
-                  value?.toString() ?? widget.options.widgetOptions.label;
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    label,
-                    style: widget.options.widgetOptions.labelStyle,
-                  ),
-                  widget.options.widgetOptions.icon ?? const SizedBox(),
-                ],
+              return ListView.builder(
+                itemCount: widget.options.controller.value.length,
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return ValueWrapper(
+                    options: widget.options.valueWrapperOptions,
+                    controller: widget.options.controller,
+                  );
+                },
               );
             },
           ),

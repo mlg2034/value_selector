@@ -45,3 +45,23 @@ O
 pubspec.yaml,e\8\e8e045469170189f1d6ef12576bd01af132b1018
 <
 CHANGELOG.md,a\b\ab09011fa121d0a2bb9fa4ca76094f2482b902b7
+X
+(lib/components/select_value_builder.dart,f\c\fc6dc46f4b32b4449ba2847bc56e195d551e446d
+\
+,lib/controllers/multu_select_controller.dart,9\6\96c7ce2d0a5e734a7a1ae991b36649284e13f474
+N
+lib/components/components.dart,1\e\1eac6e18bf91bb1aab4f5881301707292a4d48d0
+^
+.lib/components/selected_value_item_widget.dart,5\1\51449eae0d8c585b67ca0eff2839ca4ce6aab6b9
+Z
+*lib/options/multi_select_value_buider.dart,c\c\ccf0942c514dd832094f690b448dea66464c8f8c
+b
+2lib/options/multi_select_value_buider_options.dart,b\f\bf80f790f4558021c0f17f5c4b70bbbd522d5a5e
+O
+lib/options/widget_options.dart,4\a\4af447ec2482d47a8b3382df63c3b5a8a53582c9
+b
+2lib/components/multi_select_value_item_widget.dart,1\8\18c242d0070beb799ec12eaa64ca9cbcea40fe24
+Q
+!lib/components/value_wrapper.dart,5\f\5f9568ebd3cef461d276c9fe38123cfc75cd8483
+V
+&lib/options/value_wrapper_options.dart,6\e\6e0f856dd20707ca6678e84a03e06e9a38b0df20

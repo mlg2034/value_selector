@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:value_selector/controllers/select_value_controller.dart';
+import 'package:value_selector/controllers/multu_select_controller.dart';
+import 'package:value_selector/options/options.dart';
 
-import 'widget_options.dart';
-
-typedef SelectValueBuilder<T> = Widget Function(
-  BuildContext context,
-  T value,
-  T? selectedValue,
-  void Function(T?)? onChanged,
-);
-
-class SelectedValueOption<T> {
-  final SelectValueController<T> selectValueController;
-  late final SelectValueBuilder<T>? builder;
+class MultiSelectValueOptions<T> {
   final WidgetOptions widgetOptions;
-
-  SelectedValueOption({
-    required this.selectValueController,
+  late final SelectValueBuilder<T>? builder;
+  final MultiSelectController controller;
+  final ValueWrapperOptions<T>? valueWrapperOptions;
+  MultiSelectValueOptions({
+    required this.controller,
     required this.widgetOptions,
+    this.valueWrapperOptions,
     this.builder,
   }) {
     this.builder = builder ??
