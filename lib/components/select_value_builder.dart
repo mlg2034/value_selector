@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:value_selector/options/select_value_buider_options.dart';
 
-class SelectValueBuilder<T> extends StatelessWidget {
-  final SelectValueOption options;
+class SelectValueBuilderWidget<T> extends StatelessWidget {
+  final SelectedValueOption options;
 
-  const SelectValueBuilder({super.key, required this.options});
+  const SelectValueBuilderWidget({super.key, required this.options});
 
   _toggleSelection(BuildContext context, T newValue) => () {
         if (options.selectValueController.value == newValue) {
@@ -23,12 +23,12 @@ class SelectValueBuilder<T> extends StatelessWidget {
       valueListenable: options.selectValueController,
       builder: (context, value, child) {
         return ListView.builder(
-          itemCount: options.values.length,
+          itemCount: options.widgetOptions.values.length,
           itemBuilder: (context, index) => GestureDetector(
-            onTap: _toggleSelection(context, options.values[index]),
+            onTap: _toggleSelection(context, options.widgetOptions.values[index]),
             child: options.builder!(
               context,
-              options.values[index],
+              options.widgetOptions.values[index],
               value,
               (val) {},
             ),

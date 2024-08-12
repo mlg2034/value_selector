@@ -8,7 +8,6 @@ class ExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final examples = <String>[
       'example 1',
       'example 2',
@@ -18,10 +17,12 @@ class ExampleScreen extends StatelessWidget {
 
     final selectValueController = SelectValueController<String>();
 
-    final selectValueOption = SelectValueOption(
+    final exampleOptions = SelectedValueOption(
       selectValueController: selectValueController,
-      values: examples,
-      label: 'Example',
+      widgetOptions: WidgetOptions(
+        values: examples,
+        label: 'Example',
+      ),
     );
 
     return Scaffold(
@@ -30,12 +31,12 @@ class ExampleScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SelectedValueItemWidget(
-            selectValueOption: selectValueOption,
-            onPressed: () {
+            options: exampleOptions,
+             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                builder: (_) => SelectValueBuilder(
-                  options: selectValueOption,
+                builder: (_) => SelectValueBuilderWidget(
+                  options: exampleOptions,
                 ),
               );
             },
